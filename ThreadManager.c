@@ -15,7 +15,10 @@ ThreadManager createManager(int ThreadNum, int pidNum, int waitTime)
 
 void run(ThreadManager manager)
 {
-    printf(manager.pidNum);
+    printf("It is gonna to sleep for %d\n", manager.waitTime);
+
     Sleep(manager.waitTime);
+
     release_pid(manager.pidNum);
+    printf("\n");
 }
