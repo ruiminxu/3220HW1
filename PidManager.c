@@ -3,6 +3,8 @@
 
 int allocate_map()
 {
+    printf(MAX_PID - MIN_PID);
+
     if(pid_map == NULL)  return -1;
     //If the array is NULL return -1
     for(int i = 0; i < MAX_PID - MIN_PID; i++)
@@ -23,6 +25,7 @@ int allocate_pid()
     //If the array is NULL return -1
     for(int i = 0; i < MAX_PID - MIN_PID; i++)
     {
+        printf("here");
         if(pid_map[i] == 0)
         {
             pid_map[i] = 1;
@@ -57,4 +60,4 @@ void release_pid(int pid)
         }
     }
 }
-}
+
