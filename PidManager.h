@@ -1,5 +1,5 @@
-#ifndef RAYTESTTHREE_PIDMANAGER_H
-#define RAYTESTTHREE_PIDMANAGER_H
+#ifndef PIDMANAGER_H
+#define PIDMANAGER_H
 #define MIN_PID 300
 #define MAX_PID 5000
 int pid_map[MAX_PID - MIN_PID];

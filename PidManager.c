@@ -1,63 +1,48 @@
 #include "PidManager.h"
 #include <stdio.h>
 
+//function that allocates the map
+//by using a for loop that initializes the pids at i to 0
 int allocate_map()
 {
-    printf(MAX_PID - MIN_PID);
-
-    if(pid_map == NULL)  return -1;
-    //If the array is NULL return -1
     for(int i = 0; i < MAX_PID - MIN_PID; i++)
     {
         pid_map[i] = 0;
     }
-    /*
-        The for loop initialize each of the index with 0
-        Meaning it is each index is empty and ready for storing
-     */
 
     return 1;
 }
 
+//allocates pid by using a for loop and verifies if the pid is equal to 0(not being used)
+// if it is, then that pid gets the value of one, which means it was allocated
 int allocate_pid()
 {
-    if(pid_map == NULL) return -1;
-    //If the array is NULL return -1
     for(int i = 0; i < MAX_PID - MIN_PID; i++)
     {
-        printf("here");
         if(pid_map[i] == 0)
         {
             pid_map[i] = 1;
+            // printf("pid allocated: %d \n", MIN_PID + i);
             return MIN_PID + i;
         }
     }
-    /*
-       The for loop will look for an empty index
-       if it is empty, it will initialize it as 1
-       then return the pid number
-    */
 }
 
+
+//the release pid function creates a new pid variable
+//which then gets passed to the pid map, to verify if the pid is being used or not
+//if the pid isn't being used(equal to 0), then it'll print a message, if its being used then 
+//the pid will get initialized to 0
 void release_pid(int pid)
 {
-    if(pid_map == NULL)  //If the array is NULL, print the error message
+    int newPID = pid - MIN_PID;
+
+    if(pid_map[newPID] == 0)
     {
-        printf("There is nothing to realease");
-    }else if(pid < MIN_PID || pid > MAX_PID)  //If the pid is not in range, print the error message
-    {
-        printf("pid is not in range");
+        printf("There is nothing to release");
     }else{
-        int newPID = pid - MIN_PID; //to find the index of the pid, do pid - MIN-PID
-
-        if(pid_map[newPID] == 0)  //If the index of the pid is already empty, print error message
-        {
-            printf("There is nothing to release");
-        }else{
-            printf("released pid: %d \n", pid);  //If it is not empty, release the pid from the index
-
-            pid_map[newPID] = 0;
+        printf("released pid: %d \n", pid);
+        pid_map[newPID] = 0;
         }
-    }
+    
 }
-
