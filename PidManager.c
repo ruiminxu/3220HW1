@@ -3,8 +3,8 @@
 
 int allocate_map()
 {
-    if(pid_map == NULL)  return -1;
-    //If the array is NULL return -1
+//    if(pid_map == NULL)  return -1;
+//    //If the array is NULL return -1
     for(int i = 0; i < MAX_PID - MIN_PID; i++)
     {
         pid_map[i] = 0;
@@ -19,13 +19,14 @@ int allocate_map()
 
 int allocate_pid()
 {
-    if(pid_map == NULL) return -1;
+//    if(pid_map == NULL) return -1;
     //If the array is NULL return -1
     for(int i = 0; i < MAX_PID - MIN_PID; i++)
     {
         if(pid_map[i] == 0)
         {
             pid_map[i] = 1;
+//            printf("Allocating pid %d\n", MIN_PID + i);
             return MIN_PID + i;
         }
     }
@@ -38,10 +39,10 @@ int allocate_pid()
 
 void release_pid(int pid)
 {
-    if(pid_map == NULL)  //If the array is NULL, print the error message
-    {
-        printf("There is nothing to realease");
-    }else if(pid < MIN_PID || pid > MAX_PID)  //If the pid is not in range, print the error message
+////    if(pid_map == NULL)  //If the array is NULL, print the error message
+////    {
+//        printf("There is nothing to realease");
+     if(pid < MIN_PID || pid > MAX_PID)  //If the pid is not in range, print the error message
     {
         printf("pid is not in range");
     }else{
@@ -49,12 +50,12 @@ void release_pid(int pid)
 
         if(pid_map[newPID] == 0)  //If the index of the pid is already empty, print error message
         {
-            printf("There is nothing to release");
+            printf("There is nothing to release %d\n",pid);
         }else{
-            printf("released pid: %d \n", pid);  //If it is not empty, release the pid from the index
+//            printf("released pid: %d \n", pid);  //If it is not empty, release the pid from the index
 
             pid_map[newPID] = 0;
         }
     }
 }
-}
+

@@ -1,0 +1,3 @@
+/Volumes/Storage/C++ Projects/3220HW1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Volumes/Storage/C++ Projects/3220HW1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Volumes/Storage/C++ Projects/3220HW1/cmake-build-debug/CMakeFiles/3220HW1.dir

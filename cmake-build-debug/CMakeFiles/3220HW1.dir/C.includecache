@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Volumes/Storage/C++ Projects/3220HW1/PidManager.h
+
+/Volumes/Storage/C++ Projects/3220HW1/main.c
+stdio.h
+-
+stdlib.h
+-
+unistd.h
+-
+pthread.h
+-
+PidManager.h
+/Volumes/Storage/C++ Projects/3220HW1/PidManager.h
+
